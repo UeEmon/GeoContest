@@ -1,0 +1,32 @@
+[project]
+name = "geocontest"
+version = "0.1.0"
+description = "第3回 国土交通省 地理空間情報データチャレンジ（人流予測）用コード"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "geopandas>=0.14",
+    "shapely>=2.0",
+    "pyproj",
+    "scikit-learn",
+    "lightgbm",
+    "requests",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyterlab", "matplotlib"]
+catboost = ["catboost"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
